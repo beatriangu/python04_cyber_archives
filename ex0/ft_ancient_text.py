@@ -21,17 +21,17 @@ def read_ancient_text(filename: str) -> list[str] | None:
 
 
 def main() -> None:
-    print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===")
+    print("=== CYBER ARCHIVES - DATA RECOVERY SYSTEM ===\n")
+
     print(f"Accessing Storage Vault: {FILENAME}")
+    print("Connection established...\n")
 
     lines = read_ancient_text(FILENAME)
     if lines is None:
         print("ERROR: Storage vault not found. Run data generator first.")
         return
 
-    print("Connection established...\n")
     print("RECOVERED DATA:")
-
     for line in lines:
         clean = line.strip()
         clean = clean.replace("[", "{[}", 1).replace("]", "{]}", 1)
@@ -42,6 +42,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
