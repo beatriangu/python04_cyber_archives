@@ -20,6 +20,8 @@ venv/
 # OS / System files
 # =========================
 .DS_Store
+**/.DS_Store
+
 Thumbs.db
 
 # =========================
@@ -36,7 +38,7 @@ Thumbs.db
 *~
 
 # =========================
-# Project-specific (NOT SUBMITTED)
+# Project-specific tools (NOT SUBMITTED)
 # =========================
 tools/
 data_quest_tools/
@@ -48,8 +50,19 @@ attachments/
 *.pdf
 
 # =========================
-# Generated files (NOT SUBMITTED)
+# Generated exercise files (NOT SUBMITTED)
 # =========================
 ancient_fragment.txt
+classified_data.txt
+corrupted_archive.txt
+standard_archive.txt
+security_protocols.txt
+sample_data.json
 new_discovery.txt
 
+# Exercise outputs
+ex0/ancient_fragment.txt
+ex3/classified_data.txt
+ex3/security_protocols.txt
+ex2/out.txt
+ex2/err.txt

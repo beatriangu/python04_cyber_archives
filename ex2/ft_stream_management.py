@@ -14,15 +14,19 @@ def main() -> None:
     status_report = input("Input Stream active. Enter status report: ")
 
     print()
-    print(f"[STANDARD] Archive status from {archivist_id}: {status_report}")
-
-    sys.stderr.write(
-        "[ALERT] System diagnostic: Communication channels verified\n"
+    print(
+        f"{{[}}STANDARD{{]}} Archive status from {archivist_id}: "
+        f"{status_report}"
     )
 
-    print("[STANDARD] Data transmission complete\n")
+    sys.stderr.write(
+        "{[}ALERT{]} System diagnostic: Communication channels verified\n"
+    )
+
+    print("{[}STANDARD{]} Data transmission complete\n")
     print("Three-channel communication test successful.")
 
 
 if __name__ == "__main__":
     main()
+
