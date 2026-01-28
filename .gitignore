@@ -12,45 +12,21 @@ venv/
 .env.*
 
 # =========================
-# Logs
-# =========================
-*.log
-
-# =========================
 # OS / System files
 # =========================
 .DS_Store
 **/.DS_Store
 
-Thumbs.db
+# =========================
+# Logs / temp outputs
+# =========================
+*.log
+out.txt
+err.txt
 
 # =========================
-# Editor / IDE files
-# =========================
-.vscode/
-.idea/
-
-# =========================
-# Temporary files
-# =========================
-*.tmp
-*.swp
-*~
-
-# =========================
-# Project-specific tools (NOT SUBMITTED)
-# =========================
-tools/
-data_quest_tools/
-attachments/
-
-# =========================
-# Subjects / PDFs (NOT SUBMITTED)
-# =========================
-*.pdf
-
-# =========================
-# Generated exercise files (NOT SUBMITTED)
+# Generated training files (data_generator)
+# These files are reproducible and not part of the delivery
 # =========================
 ancient_fragment.txt
 classified_data.txt
@@ -60,9 +36,24 @@ security_protocols.txt
 sample_data.json
 new_discovery.txt
 
-# Exercise outputs
+# =========================
+# Generated files inside exercises
+# =========================
 ex0/ancient_fragment.txt
 ex3/classified_data.txt
 ex3/security_protocols.txt
 ex2/out.txt
 ex2/err.txt
+
+# =========================
+# Personal learning notes (not part of submission)
+# =========================
+MAP.md
+FAQ.md
+MAP.txt
+FAQ.txt
+# =========================
+# Subject files / tools
+# =========================
+subject*.pdf
+tools/
