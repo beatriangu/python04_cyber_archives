@@ -20,12 +20,24 @@ python04_cyber_archives/
 +-- README.md
 +-- MAP.md
 +-- .gitignore
-🌱 Idea central
+```
+
+---
+
+## 🌱 Idea central
+
+```text
 MUNDO EXTERIOR
        |
        v
 PROGRAMA SE PROTEGE
-🟢 ex0 — Ancient Text Recovery
+```
+
+---
+
+## 🟢 ex0 — Ancient Text Recovery
+
+```text
 +----------------------+
 |        main()        |
 +----------------------+
@@ -34,11 +46,19 @@ PROGRAMA SE PROTEGE
 | try / finally        |
 | close()              |
 +----------------------+
+```
 
 Flujo:
 
+```text
 ARCHIVO  --->  LEER  --->  MOSTRAR
-🟡 ex1 — Archive Creation
+```
+
+---
+
+## 🟡 ex1 — Archive Creation
+
+```text
 +----------------------+
 |        main()        |
 +----------------------+
@@ -47,11 +67,19 @@ ARCHIVO  --->  LEER  --->  MOSTRAR
 | write()              |
 | close()              |
 +----------------------+
+```
 
 Flujo:
 
+```text
 DATOS  --->  ESCRIBIR  --->  ARCHIVO
-🔵 ex2 — Stream Management
+```
+
+---
+
+## 🔵 ex2 — Stream Management
+
+```text
             USUARIO
                |
                v
@@ -64,7 +92,13 @@ DATOS  --->  ESCRIBIR  --->  ARCHIVO
 | stdout  -> mensajes        |
 | stderr  -> alertas         |
 +----------------------------+
-🟣 ex3 — Vault Security
+```
+
+---
+
+## 🟣 ex3 — Vault Security
+
+```text
 +------------------------------+
 |        with open()           |
 +------------------------------+
@@ -72,11 +106,19 @@ DATOS  --->  ESCRIBIR  --->  ARCHIVO
 | usar recurso                 |
 | liberar automáticamente      |
 +------------------------------+
+```
 
 Principio:
 
+```text
 ADQUIRIR -> USAR -> LIBERAR
-🔴 ex4 — Crisis Response
+```
+
+---
+
+## 🔴 ex4 — Crisis Response
+
+```text
 +-----------------------------------+
 |        crisis_handler()           |
 +-----------------------------------+
@@ -87,11 +129,19 @@ ADQUIRIR -> USAR -> LIBERAR
 | except Exception                  |
 | finally -> sistema estable        |
 +-----------------------------------+
+```
 
 Principio:
 
+```text
 CRISIS  !=  CAÍDA DEL SISTEMA
-🧠 Evolución Global
+```
+
+---
+
+## 🧠 Evolución Global
+
+```text
         +------------------+
         |  Mundo exterior  |
         +------------------+
@@ -120,18 +170,15 @@ CRISIS  !=  CAÍDA DEL SISTEMA
         +------------------+
         |  ex4: resiliencia|
         +------------------+
-🎯 Objetivo final
-
-Diseñar programas que:
-
-interactúan con el mundo exterior
-
-protegen recursos
-
-gestionan errores
-
-nunca colapsan
-
+```
 
 ---
 
+## 🎯 Objetivo final
+
+Diseñar programas que:
+
+- interactúan con el mundo exterior  
+- protegen recursos  
+- gestionan errores  
+- nunca colapsan  
