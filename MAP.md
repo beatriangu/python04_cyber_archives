@@ -169,7 +169,6 @@ El sistema informa, limpia y continúa
 
 El programa nunca se rompe
 
-🧠 Mapa global
         ┌──────────┐
         │  Mundo   │
         │ exterior │
@@ -199,6 +198,8 @@ El programa nunca se rompe
       ┌───────────────┐
       │ ex4: crisis   │  ← resiliencia completa
       └───────────────┘
+
+
 🎯 Objetivo final
 
 Ser capaz de explicar:
