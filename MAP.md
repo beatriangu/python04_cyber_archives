@@ -160,6 +160,8 @@ Cada error tiene respuesta
 El sistema informa, limpia y continúa
 
 El programa nunca se rompe
+
+🧠 Mapa global del módulo
         ┌──────────┐
         │  Mundo   │
         │ exterior │
@@ -189,7 +191,6 @@ El programa nunca se rompe
       ┌───────────────┐
       │ ex4: crisis   │  ← resiliencia real
       └───────────────┘
-   
 🎯 Objetivo final del módulo
 
 Ser capaz de explicar con claridad:
@@ -205,5 +206,9 @@ cómo se comunican los errores
 por qué el sistema sigue vivo pase lo que pase
 
 Este MAP representa mi forma de diseñar programas robustos en Python.
+
+
+---
+
 
 
