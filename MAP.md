@@ -2,10 +2,10 @@
 ## python04_cyber_archives — Safe I/O & Resilient Programs
 
 Este documento es **MI mapa de aprendizaje y diseño**.  
-Representa cómo evoluciona mi forma de pensar la interacción entre
+Representa cómo evoluciona mi forma de pensar la interacción entre  
 un programa Python y el **mundo exterior**: archivos, streams y errores reales.
 
-No es una lista de ejercicios.
+No es una lista de ejercicios.  
 Es una **arquitectura mental progresiva**, visual y defendible.
 
 ---
@@ -35,182 +35,175 @@ Piensa el módulo como una **evolución controlada del contacto con el mundo ext
 👉 Primer contacto con I/O + control manual
 
 ### Arquitectura
+
+```text
 main()
 ├─ logs (print)
 ├─ read_ancient_text()
-│ ├─ open()
-│ ├─ readlines()
-│ └─ finally → close()
+│  ├─ open()
+│  ├─ readlines()
+│  └─ finally → close()
 ├─ formateo de líneas
 └─ cierre limpio
-
-
-### Idea clave
+Idea clave
 ARCHIVO ──▶ leer ──▶ mostrar
+Aprendo
 
+FileNotFoundError
 
-### Aprendo
-- `FileNotFoundError`
-- `try / finally`
-- Que el I/O puede fallar
-- Que los recursos **siempre** deben cerrarse
+try / finally
 
----
+Que el I/O puede fallar
 
-## 🟡 ex1 — Archive Creation  
+Que los recursos siempre deben cerrarse
+
+🟡 ex1 — Archive Creation
+
 👉 Escritura segura + separación de datos
 
-### Arquitectura
+Arquitectura
 main()
 ├─ get_lines() ← datos puros
 ├─ preview (print)
 ├─ write_archive()
-│ ├─ open("w")
-│ ├─ write()
-│ └─ finally → close()
+│  ├─ open("w")
+│  ├─ write()
+│  └─ finally → close()
 └─ confirmación
-
-
-### Idea clave
+Idea clave
 datos ──▶ escribir ──▶ archivo
+Aprendo
 
+Separar qué se escribe de cómo se escribe
 
-### Aprendo
-- Separar **qué se escribe** de **cómo se escribe**
-- Control del output
-- Gestión manual de recursos (todavía)
+Control del output
 
----
+Gestión manual de recursos (todavía)
 
-## 🔵 ex2 — Stream Management  
+🔵 ex2 — Stream Management
+
 👉 Canales de comunicación (streams)
 
-### Arquitectura
+Arquitectura
 Usuario
-│
-▼
+   │
+   ▼
 stdin (input)
-│
-▼
+   │
+   ▼
 programa
-│
-├─ stdout → mensajes normales
-└─ stderr → alertas / diagnósticos
-
-
-### Idea clave
+   │
+   ├─ stdout → mensajes normales
+   └─ stderr → alertas / diagnósticos
+Idea clave
 ENTRADA ≠ SALIDA ≠ ALERTA
+Aprendo
 
+Existen tres flujos distintos
 
-### Aprendo
-- Existen **tres flujos distintos**
-- No todo es `print`
-- Un programa serio **no mezcla mensajes**
+No todo es print
 
----
+Un programa serio no mezcla mensajes
 
-## 🟣 ex3 — Vault Security  
-👉 RAII real con `with`
+🟣 ex3 — Vault Security
 
-### Arquitectura
+👉 RAII real con with
+
+Arquitectura
 main()
 ├─ read_classified() ← with open("r")
 ├─ format_line() ← lógica pura
 ├─ write_protocol() ← with open("w")
 └─ logs de seguridad
-
-
-### Idea clave
+Idea clave
 adquirir ──▶ usar ──▶ liberar (automático)
+Aprendo
 
+Context managers (with)
 
-### Aprendo
-- Context managers (`with`)
-- Cierre automático incluso si algo falla
-- Ya no dependo de `finally`
+Cierre automático incluso si algo falla
 
-👉 **Esto es nivel profesional**
+Ya no dependo de finally
 
----
+👉 Esto es nivel profesional
 
-## 🔴 ex4 — Crisis Response  
+🔴 ex4 — Crisis Response
+
 👉 El mundo real: errores múltiples + sistema estable
 
-### Arquitectura
+Arquitectura
 main()
 ├─ crisis_handler("lost_archive.txt")
 ├─ crisis_handler("classified_vault.txt")
 ├─ crisis_handler("standard_archive.txt")
 └─ cierre global
 
+Dentro de crisis_handler:
 
-Dentro de `crisis_handler`:
 try:
-with open():
-SUCCESS
+    with open():
+        SUCCESS
 except FileNotFoundError:
-RESPONSE → not found
+    RESPONSE → not found
 except PermissionError:
-RESPONSE → access denied
+    RESPONSE → access denied
 except Exception:
-RESPONSE → unexpected
+    RESPONSE → unexpected
 finally:
-STATUS → estable
-
-
-### Idea clave
+    STATUS → estable
+Idea clave
 CRISIS ≠ CAÍDA DEL SISTEMA
+Aprendo
 
+Cada error tiene respuesta
 
-### Aprendo
-- Cada error tiene respuesta
-- El sistema informa, limpia y continúa
-- El programa **nunca se rompe**
+El sistema informa, limpia y continúa
 
----
-
-## 🧠 Mapa global del módulo
-
-    ┌──────────┐
-    │  Mundo   │
-    │ exterior │
-    └────┬─────┘
-         │
-         ▼
-  ┌───────────────┐
-  │ ex0: leer      │  ← I/O básico
-  └───────────────┘
-         │
-         ▼
-  ┌───────────────┐
-  │ ex1: escribir  │  ← output controlado
-  └───────────────┘
-         │
-         ▼
-  ┌───────────────┐
-  │ ex2: streams   │  ← canales separados
-  └───────────────┘
-         │
-         ▼
-  ┌───────────────┐
-  │ ex3: with      │  ← RAII / seguridad
-  └───────────────┘
-         │
-         ▼
-  ┌───────────────┐
-  │ ex4: crisis    │  ← resiliencia real
-  └───────────────┘
-
----
-
-## 🎯 Objetivo final del módulo
+El programa nunca se rompe
+        ┌──────────┐
+        │  Mundo   │
+        │ exterior │
+        └────┬─────┘
+             │
+             ▼
+      ┌───────────────┐
+      │ ex0: leer     │  ← I/O básico
+      └───────────────┘
+             │
+             ▼
+      ┌───────────────┐
+      │ ex1: escribir │  ← output controlado
+      └───────────────┘
+             │
+             ▼
+      ┌───────────────┐
+      │ ex2: streams  │  ← canales separados
+      └───────────────┘
+             │
+             ▼
+      ┌───────────────┐
+      │ ex3: with     │  ← RAII / seguridad
+      └───────────────┘
+             │
+             ▼
+      ┌───────────────┐
+      │ ex4: crisis   │  ← resiliencia real
+      └───────────────┘
+   
+🎯 Objetivo final del módulo
 
 Ser capaz de explicar con claridad:
 
-- qué puede fallar al interactuar con el mundo exterior
-- cómo se protege el programa
-- cómo se liberan recursos
-- cómo se comunican los errores
-- por qué el sistema **sigue vivo pase lo que pase**
+qué puede fallar al interactuar con el mundo exterior
 
-Este MAP representa **mi forma de diseñar programas robustos en Python**.
+cómo se protege el programa
+
+cómo se liberan recursos
+
+cómo se comunican los errores
+
+por qué el sistema sigue vivo pase lo que pase
+
+Este MAP representa mi forma de diseñar programas robustos en Python.
+
+
