@@ -9,35 +9,23 @@ Representa cómo evoluciona mi forma de pensar la interacción entre un programa
 ## 📁 Project Structure
 
 ```text
-python04_cyber_archives
+python04_cyber_archives/
 |
-+-- ex0
-+-- ex1
-+-- ex2
-+-- ex3
-+-- ex4
-+-- tools
++-- ex0/
++-- ex1/
++-- ex2/
++-- ex3/
++-- ex4/
++-- tools/
 +-- README.md
 +-- MAP.md
 +-- .gitignore
-```
-
----
-
-## 🌱 Idea central
-
-```text
+🌱 Idea central
 MUNDO EXTERIOR
        |
        v
 PROGRAMA SE PROTEGE
-```
-
----
-
-## 🟢 ex0 — Ancient Text Recovery
-
-```text
+🟢 ex0 — Ancient Text Recovery
 +----------------------+
 |        main()        |
 +----------------------+
@@ -46,19 +34,11 @@ PROGRAMA SE PROTEGE
 | try / finally        |
 | close()              |
 +----------------------+
-```
 
 Flujo:
 
-```text
 ARCHIVO  --->  LEER  --->  MOSTRAR
-```
-
----
-
-## 🟡 ex1 — Archive Creation
-
-```text
+🟡 ex1 — Archive Creation
 +----------------------+
 |        main()        |
 +----------------------+
@@ -67,19 +47,11 @@ ARCHIVO  --->  LEER  --->  MOSTRAR
 | write()              |
 | close()              |
 +----------------------+
-```
 
 Flujo:
 
-```text
 DATOS  --->  ESCRIBIR  --->  ARCHIVO
-```
-
----
-
-## 🔵 ex2 — Stream Management
-
-```text
+🔵 ex2 — Stream Management
             USUARIO
                |
                v
@@ -92,13 +64,7 @@ DATOS  --->  ESCRIBIR  --->  ARCHIVO
 | stdout  -> mensajes        |
 | stderr  -> alertas         |
 +----------------------------+
-```
-
----
-
-## 🟣 ex3 — Vault Security
-
-```text
+🟣 ex3 — Vault Security
 +------------------------------+
 |        with open()           |
 +------------------------------+
@@ -106,19 +72,11 @@ DATOS  --->  ESCRIBIR  --->  ARCHIVO
 | usar recurso                 |
 | liberar automáticamente      |
 +------------------------------+
-```
 
 Principio:
 
-```text
 ADQUIRIR -> USAR -> LIBERAR
-```
-
----
-
-## 🔴 ex4 — Crisis Response
-
-```text
+🔴 ex4 — Crisis Response
 +-----------------------------------+
 |        crisis_handler()           |
 +-----------------------------------+
@@ -129,19 +87,11 @@ ADQUIRIR -> USAR -> LIBERAR
 | except Exception                  |
 | finally -> sistema estable        |
 +-----------------------------------+
-```
 
 Principio:
 
-```text
 CRISIS  !=  CAÍDA DEL SISTEMA
-```
-
----
-
-## 🧠 Evolución Global
-
-```text
+🧠 Evolución Global
         +------------------+
         |  Mundo exterior  |
         +------------------+
@@ -170,16 +120,18 @@ CRISIS  !=  CAÍDA DEL SISTEMA
         +------------------+
         |  ex4: resiliencia|
         +------------------+
-```
-
----
-
-## 🎯 Objetivo final
+🎯 Objetivo final
 
 Diseñar programas que:
 
-- interactúan con el mundo exterior
-- protegen recursos
-- gestionan errores
-- nunca colapsan
+interactúan con el mundo exterior
+
+protegen recursos
+
+gestionan errores
+
+nunca colapsan
+
+
+
 
