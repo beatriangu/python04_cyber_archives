@@ -1,10 +1,14 @@
-🧭 MAP.md — Python Garden · Cyber Archives
-python04_cyber_archives — Safe I/O & Resilient Programs
+# 🧭 MAP.md — Python Garden · Cyber Archives
+## python04_cyber_archives — Safe I/O & Resilient Programs
 
-This document is my learning and design map.
+This document is my learning and design map.  
 It represents how my thinking evolves when designing the interaction between a Python program and the external world.
 
-📁 Project Structure
+---
+
+## 📁 Project Structure
+
+```text
 python04_cyber_archives/
 |
 +-- ex0/
