@@ -1,14 +1,10 @@
-# 🧭 MAP.md — Python Garden · Cyber Archives
-## python04_cyber_archives — Safe I/O & Resilient Programs
+🧭 MAP.md — Python Garden · Cyber Archives
+python04_cyber_archives — Safe I/O & Resilient Programs
 
-Este documento es mi mapa de aprendizaje y diseño.  
-Representa cómo evoluciona mi forma de pensar la interacción entre un programa Python y el mundo exterior.
+This document is my learning and design map.
+It represents how my thinking evolves when designing the interaction between a Python program and the external world.
 
----
-
-## 📁 Project Structure
-
-```text
+📁 Project Structure
 python04_cyber_archives/
 |
 +-- ex0/
@@ -20,24 +16,12 @@ python04_cyber_archives/
 +-- README.md
 +-- MAP.md
 +-- .gitignore
-```
-
----
-
-## 🌱 Idea central
-
-```text
-MUNDO EXTERIOR
+🌱 Core Idea
+EXTERNAL WORLD
        |
        v
-PROGRAMA SE PROTEGE
-```
-
----
-
-## 🟢 ex0 — Ancient Text Recovery
-
-```text
+PROGRAM PROTECTS ITSELF
+🟢 ex0 — Ancient Text Recovery
 +----------------------+
 |        main()        |
 +----------------------+
@@ -46,19 +30,11 @@ PROGRAMA SE PROTEGE
 | try / finally        |
 | close()              |
 +----------------------+
-```
 
-Flujo:
+Flow:
 
-```text
-ARCHIVO  --->  LEER  --->  MOSTRAR
-```
-
----
-
-## 🟡 ex1 — Archive Creation
-
-```text
+FILE  --->  READ  --->  DISPLAY
+🟡 ex1 — Archive Creation
 +----------------------+
 |        main()        |
 +----------------------+
@@ -67,58 +43,36 @@ ARCHIVO  --->  LEER  --->  MOSTRAR
 | write()              |
 | close()              |
 +----------------------+
-```
 
-Flujo:
+Flow:
 
-```text
-DATOS  --->  ESCRIBIR  --->  ARCHIVO
-```
-
----
-
-## 🔵 ex2 — Stream Management
-
-```text
-            USUARIO
+DATA  --->  WRITE  --->  FILE
+🔵 ex2 — Stream Management
+            USER
                |
                v
             stdin
                |
                v
 +----------------------------+
-|          PROGRAMA          |
+|          PROGRAM           |
 +----------------------------+
-| stdout  -> mensajes        |
-| stderr  -> alertas         |
+| stdout  -> messages        |
+| stderr  -> alerts          |
 +----------------------------+
-```
-
----
-
-## 🟣 ex3 — Vault Security
-
-```text
+🟣 ex3 — Vault Security
 +------------------------------+
 |        with open()           |
 +------------------------------+
-| adquirir recurso             |
-| usar recurso                 |
-| liberar automáticamente      |
+| acquire resource             |
+| use resource                 |
+| release automatically        |
 +------------------------------+
-```
 
-Principio:
+Principle:
 
-```text
-ADQUIRIR -> USAR -> LIBERAR
-```
-
----
-
-## 🔴 ex4 — Crisis Response
-
-```text
+ACQUIRE -> USE -> RELEASE
+🔴 ex4 — Crisis Response
 +-----------------------------------+
 |        crisis_handler()           |
 +-----------------------------------+
@@ -127,33 +81,25 @@ ADQUIRIR -> USAR -> LIBERAR
 | except FileNotFoundError          |
 | except PermissionError            |
 | except Exception                  |
-| finally -> sistema estable        |
+| finally -> system stable          |
 +-----------------------------------+
-```
 
-Principio:
+Principle:
 
-```text
-CRISIS  !=  CAÍDA DEL SISTEMA
-```
-
----
-
-## 🧠 Evolución Global
-
-```text
+CRISIS  !=  SYSTEM FAILURE
+🧠 Global Evolution
         +------------------+
-        |  Mundo exterior  |
+        |  External World  |
         +------------------+
                   |
                   v
         +------------------+
-        |  ex0: leer       |
+        |  ex0: read       |
         +------------------+
                   |
                   v
         +------------------+
-        |  ex1: escribir   |
+        |  ex1: write      |
         +------------------+
                   |
                   v
@@ -168,17 +114,16 @@ CRISIS  !=  CAÍDA DEL SISTEMA
                   |
                   v
         +------------------+
-        |  ex4: resiliencia|
+        |  ex4: resilience |
         +------------------+
-```
+🎯 Final Objective
 
----
+Design programs that:
 
-## 🎯 Objetivo final
+interact with the external world
 
-Diseñar programas que:
+protect resources
 
-- interactúan con el mundo exterior  
-- protegen recursos  
-- gestionan errores  
-- nunca colapsan  
+handle errors
+
+never collapse
